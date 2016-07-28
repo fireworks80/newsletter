@@ -193,3 +193,31 @@ select {
         margin: 10px 0 0;
     }
 }
+
+/**************************************
+ * icon
+ **************************************/
+ $size-icon: 41px;
+ .icon {
+    display: inline-block;
+    width: $size-icon;
+    height: $size-icon;
+    background: {
+        position: 0 left;
+        repeat: no-repeat;
+    }
+
+    &--1 {
+        background-image: url('../images/icon1.png');
+    }
+    &-2 {
+        background-image: url('../images/icon2.png');
+    }
+    &--3 {
+        background-image: url('../images/icon3.png');
+    }
+    &--4 {
+        background-image: url('../images/icon4.png');
+    }
+ }
+

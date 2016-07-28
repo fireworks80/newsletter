@@ -189,3 +189,26 @@ select {
   width: auto;
   margin: 10px 0 0;
 }
+
+/**************************************
+ * icon
+ **************************************/
+.icon {
+  display: inline-block;
+  width: 41px;
+  height: 41px;
+  background-position: 0 left;
+  background-repeat: no-repeat;
+}
+.icon--1 {
+  background-image: url("../images/icon1.png");
+}
+.icon-2 {
+  background-image: url("../images/icon2.png");
+}
+.icon--3 {
+  background-image: url("../images/icon3.png");
+}
+.icon--4 {
+  background-image: url("../images/icon4.png");
+}

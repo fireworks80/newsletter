@@ -156,4 +156,4 @@ var prewindow = function() {
 };
 
 // 미리 보기
-prewindow();
+EventUtil.addHandler(window, 'load',prewindow);

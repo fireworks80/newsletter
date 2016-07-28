@@ -54,8 +54,28 @@
 						</td>
 					</tr>
 					<tr>
+						<th scope="row"><label for="ico1"><span class="icon icon--1"></span>icon 1 url:</label></th>
+						<td><input class="field" type="text" id="ico1" name="ico1"></td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ico2"><span class="icon icon-2"></span>icon 2 url:</label></th>
+						<td><input class="field" type="text" id="ico2" name="ico2"></td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ico3"><span class="icon icon--3"></span>icon 3 url:</label></th>
+						<td><input class="field" type="text" id="ico3" name="ico3"></td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ico4"><span class="icon icon--4"></span>icon 4 url:</label></th>
+						<td><input class="field" type="text" id="ico4" name="ico4"></td>
+					</tr>
+					<tr>
 						<th scope="row"><label for="btmColor">bottom color</label></th>
 						<td><input class="field" type="text" name="btmColor" id="btmColor" placeholder="#은 빼고 넣어 주세요"></td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="email">email:</label></th>
+						<td><input class="field" type="text" id="email" name="email"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -78,7 +98,7 @@ if(file_exists($fileName)) {
 	<div class="pop">
 		<div class="down is--active">
 		<p>파일을 다운로드 합니다.</p>
-		<a class="btn btn--down" href="<?php echo $fileName; ?>" download>download</a>
+		<a class="btn btn--down" onclick="dl();" href="<?php echo $fileName; ?>" download>download</a>
 		</div>
 		<div class="clear">
 			<p>파일을 삭제 합니다</p>
@@ -94,24 +114,22 @@ if(file_exists($fileName)) {
 
 <script src="./js/newsLetter.js"></script>
 <script>
-var makeBtn = document.querySelector('.btn--send');
-var output = document.querySelector('.output');
 
-function send(){
-	var hidden = document.querySelector('.mk');
-	hidden.value = output.innerHTML;
-}
+	function send(){
+		var hidden = document.querySelector('.mk');
+		var output = document.querySelector('.output');
+		hidden.value = output.innerHTML;
+	}
 
-var downBtn = document.querySelector('.btn--down');
+	function dl(){
+		var downBtn = document.querySelector('.btn--down');
+		var clear = document.querySelector('.clear');
+		var down = document.querySelector('.down');
 
-EventUtil.addHandler(downBtn, 'click', function(){
-	var clear = document.querySelector('.clear');
-	var down = document.querySelector('.down');
+		clear.className += ' is--active';
 
-	clear.className += ' is--active';
-
-	down.className = 'down';
-});
+		down.className = 'down';
+	};
 
 </script>
 </body>

@@ -36,14 +36,29 @@ $src = 'https://dolce-gusto-event.s3.amazonaws.com/newsletter/'.$date.'/'.$prefi
 $header = '<div style="width: 740px; margin: 0 auto;"><table width="740" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="margin:0 auto; border-collapse:collapse; border-spacing:0;">
 		    <tbody>';
 
-$footer = '<tr><td style="text-align:center; vertical-align:top; background:#'.$btmColor.';">
-			                <a href="'.$icon1Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon1.png" border="0" style="vertical-align:top;" /></a>
-			                <a href="'.$icon2Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon2.png" border="0" style="vertical-align:top;" /></a>
-			                <a href="'.$icon3Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon3.png" border="0" style="vertical-align:top;" /></a>
-			                <a href="'.$icon4Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon4.png" border="0" style="vertical-align:top;" /></a>
-			            </td>
-			        </tr>
-			        <tr>
+
+$footer_top = '<tr>
+                    <td bgcolor="#'.$btmColor.'" style="padding: 0; margin: 0;">
+                        <table bgcolor="#'.$btmColor.'" border="0" cellspacing="0" cellpadding="0" style="margin: 0; padding: 0;">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:center; vertical-align:top;">
+                                        <a href="'.$icon1Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon1.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$icon2Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon2.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$icon3Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon3.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$icon4Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon4.png" border="0" style="vertical-align:top;"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 740px; height: 27px; padding: 0;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>';
+
+
+$footer_bottom = '<tr>
 			            <td style="width: 740px; height: 27px; padding: 0; background:#'.$btmColor.'"></td>
 			        </tr>
 			        <tr>
@@ -59,6 +74,8 @@ $footer = '<tr><td style="text-align:center; vertical-align:top; background:#'.$
 						</tbody>
 				</table>
 			</div>';
+
+$footer = $footer_top. $footer_bottom;
 
 				// tr td 생성
 	function createRow($src, $len, $extention) {

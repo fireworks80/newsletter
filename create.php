@@ -4,24 +4,25 @@ $date = trim($_GET['date']);
 $row_num = trim($_GET['row']);
 $prefix = trim($_GET['prefix']);
 $extention = trim($_GET['extention']);
-$icon1Url = trim($_GET['ico1']);
-$icon2Url = trim($_GET['ico2']);
-$icon3Url = trim($_GET['ico3']);
-$icon4Url = trim($_GET['ico4']);
-$email = trim($_GET['email']);
+$email = $_GET['email'];
 
-if(empty($icon1Url)) {
-	$icon1Url = 'https://www.dolce-gusto.co.kr/';
+$ico1 = str_replace('|', '&amp;',$_GET['ico1']);
+$ico2 = str_replace('|', '&amp;',$_GET['ico2']);
+$ico3 = str_replace('|', '&amp;',$_GET['ico3']);
+$ico4 = str_replace('|', '&amp;',$_GET['ico4']);
+
+if(empty($ico1)) {
+	$ico1 = 'https://www.dolce-gusto.co.kr/';
 }
 
-if(empty($icon2Url)) {
-	$icon2Url = 'https://www.dolce-gusto.co.kr/';
+if(empty($ico2)) {
+	$ico2 = 'https://www.dolce-gusto.co.kr/';
 }
-if(empty($icon3Url)) {
-	$icon3Url = 'https://www.facebook.com/NescafeDolcegustoKorea';
+if(empty($ico3)) {
+	$ico3 = 'https://www.facebook.com/NescafeDolcegustoKorea';
 }
-if(empty($icon4Url)) {
-	$icon4Url = 'http://cafe.naver.com/dolcegusto';
+if(empty($ico4)) {
+	$ico4 = 'http://cafe.naver.com/dolcegusto';
 }
 
 if(empty($email)) {
@@ -43,10 +44,10 @@ $footer_top = '<tr>
                             <tbody>
                                 <tr>
                                     <td style="text-align:center; vertical-align:top;">
-                                        <a href="'.$icon1Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon1.png" border="0" style="vertical-align:top;"></a>
-                                        <a href="'.$icon2Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon2.png" border="0" style="vertical-align:top;"></a>
-                                        <a href="'.$icon3Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon3.png" border="0" style="vertical-align:top;"></a>
-                                        <a href="'.$icon4Url.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/20160718/icon4.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$ico1.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/'.$date.'/icon1.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$ico2.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/'.$date.'/icon2.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$ico3.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/'.$date.'/icon3.png" border="0" style="vertical-align:top;"></a>
+                                        <a href="'.$ico4.'" target="_blank"><img src="https://dolce-gusto-event.s3.amazonaws.com/newsletter/'.$date.'/icon4.png" border="0" style="vertical-align:top;"></a>
                                     </td>
                                 </tr>
                                 <tr>

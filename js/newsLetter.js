@@ -131,6 +131,7 @@ var prewindow = function() {
         var fdate = document.querySelector('.fdate');
 
         var url = './create.php?';
+        var parm = '';
 
         // input 입력 값
         for (var i = 0, len = infoForm.elements.length; i < len; i++) {
@@ -142,10 +143,24 @@ var prewindow = function() {
                 fdate.value = field.value;
 
             } else if (i > 1 && field.value !== '') {
-                url += '&' + field.name + '=' + field.value;
+                 // console.log(field.name);
+                 if(field.name === 'ico1' || field.name === 'ico2' || field.name === 'ico3' || field.name === 'ico4') {
+
+                    var valueArr = field.value.split('&');
+                    var joinValue = valueArr.join('|');
+
+                    url += '&' + field.name + '=' + joinValue;
+                    console.log(joinValue);
+
+                    //url += '&' + field.name + '=' + field.value.replace('&', '|');
+
+                 } else {
+                    url += '&' + field.name + '=' + field.value;
+                 }
+
             }
         }
-        // console.log(url);
+        console.log(url);
         var sendForm = document.querySelector('.form-send');
         sendForm.className += ' is--active';
 
@@ -155,5 +170,3 @@ var prewindow = function() {
 
 };
 
-// 미리 보기
-EventUtil.addHandler(window, 'load',prewindow);

@@ -19,7 +19,7 @@
 	<script src="./js/newsLetter.js"></script>
 </head>
 <body>
-<form action="create.php" method="post" class="info-form">
+<form class="info-form" method="get">
 	<!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"> -->
 		<fieldset>
 			<legend class="is--hidden">정보 입력</legend>
@@ -114,6 +114,8 @@ if(file_exists($fileName)) {
 
 <script src="./js/newsLetter.js"></script>
 <script>
+// 미리 보기
+EventUtil.addHandler(window, 'load',prewindow);
 
 	function send(){
 		var hidden = document.querySelector('.mk');
